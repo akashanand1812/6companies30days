@@ -1,0 +1,13 @@
+class Solution:
+    def minOperations(self, nums: List[int], numsDivide: List[int]) -> int:
+        import math
+        g = math.gcd(*numsDivide)
+        for i,a in enumerate(sorted(nums)):
+            if g % a == 0: 
+                return i
+            if a > g: 
+                break
+        return -1
+        
+        
+        //evaluate Minimum Deletions to Make Array Divisible using python
