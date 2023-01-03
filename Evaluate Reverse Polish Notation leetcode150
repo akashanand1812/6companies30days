@@ -1,0 +1,21 @@
+class Solution:
+    def evalRPN(self, token: List[str]) -> int:
+        stack=[]
+        operators=['*','+','/','-']
+        for i in token:
+            if i in operators:
+                b,a=stack.pop(),stack.pop()
+                c=operators.index(i)
+                if c==0:
+                    i=a*b
+                elif c==1:
+                    i=a+b
+                elif c==2:
+                    i=a/b
+                else:
+                    i=a-b
+            stack.append(int(i))
+        return (stack[0])
+        
+        
+        ///evaluate Reverse Polish Notation using python
