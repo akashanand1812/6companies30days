@@ -1,0 +1,14 @@
+class Solution:
+    def numberOfPairs(self, nums1: List[int], nums2: List[int], diff: int) -> int:
+        import numpy as np
+        from sortedcontainers import SortedList
+        import bisect
+        nums = np.array(nums1) - np.array(nums2)
+        new = SortedList()
+        c = 0
+        for i in nums:
+            c += new.bisect_right(i + diff)
+            new.add(i)
+        return (c)
+        
+        ////evaluate Number of Pairs Satisfying Inequality using python
