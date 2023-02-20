@@ -1,0 +1,11 @@
+class Solution:
+    def increasingTriplet(self, nums: List[int]) -> bool:
+        i,j= float('inf'),float('inf')
+        for arr in nums:
+            if arr <= i:
+                i = arr
+            elif arr <= j:
+                j = arr
+            else:
+                return True
+        return False
